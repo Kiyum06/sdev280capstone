@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
   <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+
+
 </head>
 
 <body>
@@ -58,15 +61,12 @@
     <div class="chart-row">
       <!-- Chart 1 -->
       <div class="viz-box">
-        <h3>Top 10 Players by Total Score</h3>
-        <label for="divisionSelect">Division:</label>
-        <select id="divisionSelect">
-          <option value="MPO">MPO</option>
-          <option value="FPO">FPO</option>
-          <option value="MP40">MP40</option>
-          <option value="MA1">MA1</option>
+        <h3>Top Players Rating Trend</h3>
+        <label for="ratingPlayerSelect">Select Player:</label>
+        <select id="ratingPlayerSelect">
+          <option value="">-- Choose a Player --</option>
         </select>
-        <canvas id="scoreChart"></canvas>
+        <canvas id="topRatedTrendChart"></canvas>
       </div>
 
       <!-- Chart 2 -->
@@ -84,7 +84,6 @@
   </section>
 
 
-
   <section class="playerList_container">
     <table id="player_table">
       <thead>
@@ -100,7 +99,17 @@
         </tr>
       </thead>
     </table>
+
+    <!-- radar chart -->
+    <div id="hoverRadar">
+      <div id="radarInner">
+        <canvas id="radarChart"></canvas>
+        <ul id="radarStats"></ul>
+      </div>
+    </div>
   </section>
+
+
 </body>
 
 </html>

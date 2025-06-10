@@ -65,7 +65,7 @@ nav div img:hover {
 
 .playerList_container {
   width:100%;
-  background-color: #e37e4800;
+  background-color: #f8f9fa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,7 @@ nav div img:hover {
 #player_table {
   margin: 1em;
   padding: 1em;
-  background-color: white;
+  background-color: #f8f9fa;
   min-width: 1100px;
   max-width: 1100px;
   font-family: "Urbanist", sans-serif;
@@ -92,20 +92,20 @@ nav div img:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 4px solid #002900; /* drawing a line to separate */
+  border: 4px solid #002900;
 }
 
-#chart-container {
+#topRatedTrendChart {
   width: 100%;
   max-width: 800px;
   height: 450px;
   margin: 20px auto;
-  background: white;
+  background: #fff8db;
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-/*  end of score chart */
+/*  end of rating chart */
 
 /* for 2nd chart */
 .chart-row {
@@ -130,6 +130,9 @@ nav div img:hover {
 .viz-box canvas {
   width: 100% !important;
   height: 300px !important;
+  background: #fff8db;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .longest-throw-box {
@@ -141,4 +144,62 @@ nav div img:hover {
 .top-earner-box {
   background: #fff8db;
   border: 4px solid #002900;
+}
+
+
+#hoverRadar {
+  position: absolute;
+  display: none;
+  pointer-events: auto;
+  z-index: 2000;
+  width: 350px;
+  max-height: 560px;
+  background: #fff8db;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  padding: 10px;
+  backdrop-filter: blur(4px);
+  border: 4px solid #002900;
+}
+
+#radarInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+#radarChart {
+  width: 300px !important;
+  height: 300px !important;
+  background: #fff8db;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+#radarStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+  max-height: 120px;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#radarStats li {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+} 
+
+
+#radarStats li span:first-child {
+  color: #2A9D8F;
+  font-weight: 600;
+}
+#radarStats li span:last-child {
+  color: #E76F51;
+  font-weight: 500;
 }
